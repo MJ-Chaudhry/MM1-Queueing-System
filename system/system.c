@@ -7,13 +7,13 @@
 static const char *OUTPUT_FILE = "input.csv";
 
 static const char *TABLE_TOP =
-    "┏━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓\n";
+    "┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓\n";
 
 static const char *TABLE_OUTLINE =
-    "┣━━━━━━━━╋━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━╋━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫\n";
+    "┣━━━━━━━━╋━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━╋━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫\n";
 
 static const char *TABLE_BOTTOM =
-    "┗━━━━━━━━┻━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛\n";
+    "┗━━━━━━━━┻━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┻━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛\n";
 
 /**
  * Create a random uniform variable between the `start` and `stop` ranges.
@@ -49,7 +49,7 @@ static void RunSimulation(System *system)
 
     printf(TABLE_TOP);
 
-    printf("┃ %-6s ┃ %-5s ┃ %-13s ┃ %-13s ┃ %-14s ┃ %-12s ┃ %-10s ┃ %-14s ┃ %-10s ┃ %-9s ┃ %-9s ┃\n",
+    printf("┃ %-6s ┃ %-10s ┃ %-13s ┃ %-13s ┃ %-14s ┃ %-12s ┃ %-10s ┃ %-14s ┃ %-10s ┃ %-9s ┃ %-9s ┃\n",
            "No.", "IAT", "Arrival Times", "Service Times", "Service Starts", "Service Ends", "Wait Times", "Time in System", "No. System", "No. Queue", "Idle Time");
 
     printf(TABLE_OUTLINE);
@@ -70,7 +70,7 @@ static void RunSimulation(System *system)
     float total_idle_time = system->idle_times[0];
     int total_customers_waiting = 0;
 
-    printf("┃ %6d ┃ %5.2f ┃ %13.2f ┃ %13.2f ┃ %14.2f ┃ %12.2f ┃ %10.2f ┃ %14.2f ┃ %10d ┃ %9d ┃ %9.2f ┃\n",
+    printf("┃ %6d ┃ %10.2f ┃ %13.2f ┃ %13.2f ┃ %14.2f ┃ %12.2f ┃ %10.2f ┃ %14.2f ┃ %10d ┃ %9d ┃ %9.2f ┃\n",
            1, system->iats[0], system->arrival_times[0], system->service_times[0],
            system->service_start_times[0], system->service_end_times[0],
            system->wait_times[0], system->times_in_system[0],
@@ -126,7 +126,7 @@ static void RunSimulation(System *system)
         total_time_in_system += system->times_in_system[i];
         total_idle_time += idle_time;
 
-        printf("┃ %6d ┃ %5.2f ┃ %13.2f ┃ %13.2f ┃ %14.2f ┃ %12.2f ┃ %10.2f ┃ %14.2f ┃ %10d ┃ %9d ┃ %9.2f ┃\n",
+        printf("┃ %6d ┃ %10.2f ┃ %13.2f ┃ %13.2f ┃ %14.2f ┃ %12.2f ┃ %10.2f ┃ %14.2f ┃ %10d ┃ %9d ┃ %9.2f ┃\n",
                i + 1, system->iats[i], system->arrival_times[i], system->service_times[i],
                system->service_start_times[i], system->service_end_times[i],
                system->wait_times[i], system->times_in_system[i],
@@ -135,7 +135,7 @@ static void RunSimulation(System *system)
 
     printf(TABLE_OUTLINE);
 
-    printf("┃ TOTALS ┃ %5.2f ┃ %13s ┃ %13.2f ┃ %14s ┃ %12s ┃ %10.2f ┃ %14.2f ┃ %-10s ┃ %-9s ┃ %9.2f ┃\n",
+    printf("┃ TOTALS ┃ %10.2f ┃ %13s ┃ %13.2f ┃ %14s ┃ %12s ┃ %10.2f ┃ %14.2f ┃ %-10s ┃ %-9s ┃ %9.2f ┃\n",
            total_iat, "", total_service_time, "", "", total_wait_time, total_time_in_system, "", "", total_idle_time);
 
     printf(TABLE_BOTTOM);
@@ -148,7 +148,7 @@ static void RunSimulation(System *system)
     printf("Average service time: %.2f\n", total_service_time / system->no_customers);
     printf("Average IAT: %.2f\n", total_iat / (system->no_customers - 1));
     printf("Average wait time for those who wait: %.2f\n", total_wait_time / total_customers_waiting);
-    printf("Avergae time in system: %.2f\n", total_time_in_system / system->no_customers);
+    printf("Average time in system: %.2f\n", total_time_in_system / system->no_customers);
 }
 
 System *InitializeSystem(size_t n)
