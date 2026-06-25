@@ -12,6 +12,7 @@
 		"commands" : 
 		[
 			"add_library",
+			"target_link_libraries",
 			"target_sources"
 		],
 		"files" : 
@@ -32,10 +33,21 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
 				"line" : 3,
 				"parent" : 0
 			}
 		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
 	},
 	"compileGroups" : 
 	[
@@ -49,7 +61,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "/home/jchau/Documents/School/4-1/Computer Simulations/Assignment/system"
 				}
 			],
@@ -73,6 +85,28 @@
 		}
 	],
 	"id" : "system::@addd07e476d8cfca0b24",
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"fragment" : "m"
+		}
+	],
+	"interfaceSources" : 
+	[
+		{
+			"fileSetIndex" : 0,
+			"path" : "system/system.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"fragment" : "m"
+		}
+	],
 	"name" : "system",
 	"nameOnDisk" : "libsystem.a",
 	"paths" : 
@@ -90,6 +124,10 @@
 			]
 		},
 		{
+			"interfaceSourceIndexes" : 
+			[
+				0
+			],
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
@@ -100,13 +138,13 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "system/system.c",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 2,
+			"backtrace" : 3,
 			"fileSetIndex" : 0,
 			"path" : "system/system.h",
 			"sourceGroupIndex" : 1

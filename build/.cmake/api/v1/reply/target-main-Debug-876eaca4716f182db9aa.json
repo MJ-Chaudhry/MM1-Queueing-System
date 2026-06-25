@@ -43,6 +43,18 @@
 			}
 		]
 	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"compileDependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "system::@addd07e476d8cfca0b24"
+		}
+	],
 	"compileGroups" : 
 	[
 		{
@@ -83,10 +95,6 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
 				"backtrace" : 2,
 				"fragment" : "-lm",
 				"role" : "libraries"
@@ -104,6 +112,17 @@
 		],
 		"language" : "C"
 	},
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"fragment" : "m"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "system::@addd07e476d8cfca0b24"
+		}
+	],
 	"name" : "main",
 	"nameOnDisk" : "main",
 	"paths" : 

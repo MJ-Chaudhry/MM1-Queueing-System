@@ -10,13 +10,13 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-redhat-linux/15/include",
+						"/usr/lib/gcc/x86_64-redhat-linux/16/include",
 						"/usr/local/include",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-redhat-linux/15",
+						"/usr/lib/gcc/x86_64-redhat-linux/16",
 						"/usr/lib64",
 						"/lib64",
 						"/usr/lib",
@@ -26,14 +26,15 @@
 					"linkLibraries" : 
 					[
 						"gcc",
-						"gcc_s",
+						"gcc_s_asneeded",
+						"atomic_asneeded",
 						"c",
 						"gcc",
-						"gcc_s"
+						"gcc_s_asneeded"
 					]
 				},
 				"path" : "/usr/bin/gcc",
-				"version" : "15.2.1"
+				"version" : "16.1.1"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -46,6 +47,6 @@
 	"version" : 
 	{
 		"major" : 1,
-		"minor" : 0
+		"minor" : 1
 	}
 }

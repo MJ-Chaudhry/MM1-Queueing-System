@@ -13,14 +13,18 @@
 typedef struct System {
     size_t no_customers;
     float *iats;
+    float *arrival_times;
     float *service_times;
 
-    float *arrival_times;
     float *service_start_times;
     float *service_end_times;
 
     float *wait_times;
     float *times_in_system;
+
+    int *no_system;
+    int *no_queue;
+    float *idle_times;
 } System;
 
 /**
